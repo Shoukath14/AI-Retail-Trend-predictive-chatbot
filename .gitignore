@@ -1,0 +1,65 @@
+# ─────────────────────────────────────────────────────────────
+# Git Ignore — AI Retail Trend Analyzer
+# ─────────────────────────────────────────────────────────────
+
+# ── Environment & Secrets (NEVER commit these) ────────────────
+.env
+.env.local
+.env.*.local
+
+# ── Python ────────────────────────────────────────────────────
+venv/
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+.Python
+pip-log.txt
+pip-delete-this-directory.txt
+.eggs/
+*.egg-info/
+*.egg
+dist/
+build/
+*.so
+
+# ── Database (auto-created at runtime) ────────────────────────
+database/*.db
+database/*.sqlite
+database/*.sqlite3
+
+# ── Uploaded datasets (user data, not code) ───────────────────
+data/uploads/*
+!data/uploads/.gitkeep
+
+# ── OS Files ──────────────────────────────────────────────────
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# ── IDE / Editor ──────────────────────────────────────────────
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.code-workspace
+
+# ── Logs & Temp ───────────────────────────────────────────────
+*.log
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+
+# ── Coverage & Testing ────────────────────────────────────────
+.coverage
+htmlcov/
+.pytest_cache/
+.tox/

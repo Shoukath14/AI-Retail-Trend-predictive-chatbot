@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Retail Trend Analyzer</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛍️</text></svg>"/>
+</head>
+<body>
+
+<div class="app">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-logo">
+      <div class="logo-icon">🛍️</div>
+      <div class="logo-text">Retail<span>AI</span><br><small style="font-size:10px;font-weight:400;color:var(--text-muted)">Trend Analyzer</small></div>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="nav-link active" onclick="showPage('chat')" id="nav-chat">
+        <span class="icon">💬</span> Chat
+      </a>
+      <a class="nav-link" onclick="showPage('dashboard')" id="nav-dashboard">
+        <span class="icon">📊</span> Dashboard
+      </a>
+      <a class="nav-link" onclick="showPage('upload')" id="nav-upload">
+        <span class="icon">📁</span> Upload Dataset
+      </a>
+    </nav>
+
+    <button class="new-chat-btn" onclick="startNewChat()">
+      ✦ New Chat
+    </button>
+
+    <div class="sidebar-section-title">Recent Chats</div>
+    <div class="history-list" id="history-list">
+      <div class="empty-state" style="padding:20px">
+        <div class="empty-icon" style="font-size:24px">💭</div>
+        <p style="font-size:12px">No chats yet</p>
+      </div>
+    </div>
+
+    <div class="sidebar-footer">
+      <span style="font-size:12px;color:var(--text-dim)">v1.0</span>
+      <button class="theme-toggle" onclick="toggleTheme()" id="theme-btn">🌙 Dark</button>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <div class="main">
+
+    <!-- TOP BAR -->
+    <div class="topbar">
+      <button onclick="toggleSidebar()" style="background:none;border:none;cursor:pointer;font-size:18px;color:var(--text-muted)">☰</button>
+      <span class="topbar-title" id="topbar-title">AI Retail Assistant</span>
+      <span class="topbar-badge">Groq LLaMA</span>
+      <div class="dataset-indicator hidden" id="dataset-indicator">
+        <span class="dot"></span>
+        <span id="dataset-name">Dataset loaded</span>
+        <button onclick="clearDatasetContext()" title="Clear dataset" style="background:none;border:none;cursor:pointer;color:var(--text-muted);font-size:14px;margin-left:6px;padding:0;">✕</button>
+      </div>
+    </div>
+
+    <!-- CHAT PAGE -->
+    <div class="page active" id="page-chat">
+      <div class="chat-area" id="chat-area">
+        <div class="welcome-screen" id="welcome-screen">
+          <div class="welcome-icon">🛍️</div>
+          <div class="welcome-title">Retail Trend AI</div>
+          <div class="welcome-subtitle">Ask me about fashion trends, retail analytics, demand forecasts, or upload a dataset for deep insights.</div>
+          <div class="suggestion-chips">
+            <div class="chip" onclick="sendChip(this)">📈 What categories are trending?</div>
+            <div class="chip" onclick="sendChip(this)">🥇 Top selling products this season</div>
+            <div class="chip" onclick="sendChip(this)">🌍 Which region has highest demand?</div>
+            <div class="chip" onclick="sendChip(this)">🔮 Predict demand for next quarter</div>
+            <div class="chip" onclick="sendChip(this)">📉 Any declining product categories?</div>
+            <div class="chip" onclick="sendChip(this)">💡 Recommend restocking priorities</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="input-area">
+        <div class="input-wrapper">
+          <textarea id="message-input"
+                    rows="1"
+                    placeholder="Ask about retail trends, demand forecasts…"
+                    onkeydown="handleKey(event)"
+                    oninput="autoResize(this)"></textarea>
+          <button class="send-btn" id="send-btn" onclick="sendMessage()" title="Send">
+            ➤
+          </button>
+        </div>
+        <div class="input-hint">RetailAI responds only to fashion & retail questions</div>
+      </div>
+    </div>
+
+    <!-- DASHBOARD PAGE -->
+    <div class="page" id="page-dashboard">
+      <div class="dashboard-layout">
+        <div class="dashboard-header">
+          <span style="font-size:22px">📊</span>
+          <div class="dashboard-title">Trend Dashboard</div>
+          <div style="margin-left:auto;display:flex;gap:10px;">
+            <button class="btn btn-outline" onclick="downloadReport()">⬇️ PDF Report</button>
+            <button class="btn btn-primary" onclick="refreshDashboard()">🔄 Refresh</button>
+          </div>
+        </div>
+
+        <div class="stat-grid" id="stat-grid">
+          <div class="stat-card">
+            <div class="stat-label">Total Records</div>
+            <div class="stat-value" id="stat-records">—</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Units Sold</div>
+            <div class="stat-value" id="stat-units">—</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Products</div>
+            <div class="stat-value" id="stat-products">—</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Categories</div>
+            <div class="stat-value" id="stat-categories">—</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Date Range</div>
+            <div class="stat-value" id="stat-range" style="font-size:14px">—</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Top Region</div>
+            <div class="stat-value" id="stat-region" style="font-size:16px">—</div>
+          </div>
+        </div>
+
+        <div class="charts-grid">
+          <div class="chart-card full">
+            <div class="chart-title">📅 Monthly Sales Trend <span class="badge">Time Series</span></div>
+            <div class="chart-canvas-wrap"><canvas id="chart-timeseries"></canvas></div>
+          </div>
+          <div class="chart-card">
+            <div class="chart-title">🏆 Top Products</div>
+            <div class="chart-canvas-wrap"><canvas id="chart-products"></canvas></div>
+          </div>
+          <div class="chart-card">
+            <div class="chart-title">📦 Category Demand</div>
+            <div class="chart-canvas-wrap"><canvas id="chart-category"></canvas></div>
+          </div>
+          <div class="chart-card">
+            <div class="chart-title">🍂 Seasonal Patterns</div>
+            <div class="chart-canvas-wrap"><canvas id="chart-seasonal"></canvas></div>
+          </div>
+          <div class="chart-card">
+            <div class="chart-title">🔮 Demand Predictions <span class="badge">Next Quarter</span></div>
+            <div class="predictions-list" id="predictions-list">
+              <div class="empty-state"><div class="empty-icon">🔮</div><p>Run analysis to see predictions</p></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="chart-card">
+          <div class="chart-title">🔥 Trend Scores</div>
+          <div class="trend-score-list" id="trend-scores"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- UPLOAD PAGE -->
+    <div class="page" id="page-upload">
+      <div class="upload-layout">
+        <div>
+          <h2 style="font-family:var(--font-display);font-size:22px;font-weight:800;margin-bottom:6px">📁 Upload Dataset</h2>
+          <p style="color:var(--text-muted);font-size:14px">Upload a CSV or JSON file with retail purchase history to unlock AI-powered trend analysis.</p>
+        </div>
+
+        <div class="upload-zone" id="upload-zone" onclick="document.getElementById('file-input').click()">
+          <input type="file" id="file-input" accept=".csv,.json" onchange="handleFileSelect(event)"/>
+          <div class="upload-icon">📂</div>
+          <h3>Drop your dataset here</h3>
+          <p>Supports CSV and JSON • Max 50MB</p>
+          <p style="margin-top:8px;font-size:12px;color:var(--text-dim)">
+            Expected columns: date, product, category, quantity, price, region
+          </p>
+        </div>
+
+        <div class="upload-progress" id="upload-progress">
+          <div style="font-size:13px;color:var(--text-muted)" id="progress-label">Uploading…</div>
+          <div class="progress-bar-wrap">
+            <div class="progress-bar" id="progress-bar"></div>
+          </div>
+        </div>
+
+        <div class="dataset-info" id="dataset-info">
+          <div style="display:flex;align-items:center;justify-content:space-between;">
+            <h3 style="font-family:var(--font-display);font-weight:700" id="info-filename">—</h3>
+            <span style="font-size:11px;padding:3px 10px;border-radius:20px;background:rgba(0,212,170,0.15);color:var(--accent3);font-weight:600">✓ Uploaded</span>
+          </div>
+          <div class="info-grid">
+            <div class="info-cell">
+              <div class="info-label">Rows</div>
+              <div class="info-value" id="info-rows">—</div>
+            </div>
+            <div class="info-cell">
+              <div class="info-label">Columns</div>
+              <div class="info-value" id="info-cols">—</div>
+            </div>
+            <div class="info-cell">
+              <div class="info-label">Format</div>
+              <div class="info-value" id="info-format">—</div>
+            </div>
+          </div>
+          <div style="margin-top:12px;">
+            <div class="info-label" style="margin-bottom:6px">Detected Columns</div>
+            <div class="column-tags" id="info-column-tags"></div>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:10px;flex-wrap:wrap;" id="action-btns" class="hidden">
+          <button class="btn btn-primary" onclick="runAnalysis()" id="analyze-btn">
+            🚀 Run Trend Analysis
+          </button>
+          <button class="btn btn-outline" onclick="loadSampleData()">
+            📋 Load Sample Dataset
+          </button>
+        </div>
+
+        <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px;">
+          <h4 style="font-family:var(--font-display);font-weight:700;margin-bottom:10px">📖 Expected Format</h4>
+          <pre style="font-size:12px;color:var(--text-muted);overflow-x:auto;line-height:1.6">date,product,category,quantity,price,region
+2024-01-05,Running Sneakers,Footwear,120,89.99,North
+2024-01-06,Yoga Pants,Activewear,200,59.99,West
+2024-01-07,Wool Sweater,Knitwear,95,79.99,North</pre>
+          <button class="btn btn-outline" style="margin-top:12px;font-size:12px" onclick="loadSampleData()">
+            ⬇️ Download Sample CSV
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- .main -->
+</div><!-- .app -->
+
+<div class="toast-container" id="toast-container"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

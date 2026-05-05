@@ -1,0 +1,151 @@
+date,product,category,quantity,price,region
+2023-01-05,Running Sneakers,Footwear,120,89.99,North
+2023-01-05,Denim Jacket,Outerwear,85,129.99,East
+2023-01-06,Yoga Pants,Activewear,200,59.99,West
+2023-01-07,Wool Sweater,Knitwear,95,79.99,North
+2023-01-10,Leather Boots,Footwear,60,199.99,South
+2023-01-12,Graphic Tee,Casual,310,24.99,West
+2023-01-15,Trench Coat,Outerwear,45,249.99,East
+2023-01-18,Floral Dress,Dresses,130,69.99,South
+2023-01-20,Cargo Pants,Casual,175,54.99,North
+2023-01-22,Sports Bra,Activewear,220,39.99,West
+2023-02-01,Running Sneakers,Footwear,135,89.99,North
+2023-02-03,Puffer Jacket,Outerwear,110,189.99,East
+2023-02-05,Yoga Pants,Activewear,245,59.99,West
+2023-02-07,Cashmere Sweater,Knitwear,55,149.99,North
+2023-02-10,Ankle Boots,Footwear,80,159.99,South
+2023-02-12,Graphic Tee,Casual,295,24.99,West
+2023-02-14,Midi Dress,Dresses,160,89.99,South
+2023-02-16,Slim Jeans,Denim,210,79.99,East
+2023-02-20,Windbreaker,Outerwear,70,119.99,North
+2023-02-22,Leggings,Activewear,280,44.99,West
+2023-03-01,Running Sneakers,Footwear,155,89.99,North
+2023-03-03,Bomber Jacket,Outerwear,90,149.99,East
+2023-03-05,Yoga Pants,Activewear,310,59.99,West
+2023-03-08,Cotton Sweater,Knitwear,65,69.99,North
+2023-03-10,Sandals,Footwear,140,49.99,South
+2023-03-12,Graphic Tee,Casual,340,24.99,West
+2023-03-15,Wrap Dress,Dresses,185,79.99,South
+2023-03-18,Wide Leg Jeans,Denim,195,89.99,East
+2023-03-22,Rain Jacket,Outerwear,55,99.99,North
+2023-03-25,Crop Top,Casual,260,29.99,West
+2023-04-01,Running Sneakers,Footwear,180,89.99,North
+2023-04-03,Light Blazer,Outerwear,75,179.99,East
+2023-04-05,Yoga Pants,Activewear,335,59.99,West
+2023-04-08,Linen Shirt,Casual,220,44.99,South
+2023-04-10,Strappy Sandals,Footwear,195,59.99,South
+2023-04-12,Graphic Tee,Casual,380,24.99,West
+2023-04-15,Sundress,Dresses,245,64.99,South
+2023-04-18,Straight Jeans,Denim,175,74.99,East
+2023-04-22,Denim Shorts,Denim,155,49.99,West
+2023-04-25,Sports Shorts,Activewear,290,34.99,West
+2023-05-01,Running Sneakers,Footwear,210,89.99,North
+2023-05-03,Linen Blazer,Outerwear,65,189.99,East
+2023-05-05,Yoga Pants,Activewear,370,59.99,West
+2023-05-08,Polo Shirt,Casual,260,39.99,North
+2023-05-10,Espadrilles,Footwear,175,69.99,South
+2023-05-12,Graphic Tee,Casual,410,24.99,West
+2023-05-15,Maxi Dress,Dresses,280,89.99,South
+2023-05-18,Skinny Jeans,Denim,145,79.99,East
+2023-05-22,Swim Shorts,Activewear,190,44.99,West
+2023-05-25,Tank Top,Casual,320,19.99,West
+2023-06-01,Running Sneakers,Footwear,230,89.99,North
+2023-06-03,Denim Jacket,Outerwear,95,129.99,East
+2023-06-05,Yoga Pants,Activewear,395,59.99,West
+2023-06-08,Linen Pants,Casual,240,54.99,South
+2023-06-10,Flip Flops,Footwear,310,24.99,South
+2023-06-12,Graphic Tee,Casual,440,24.99,West
+2023-06-15,Slip Dress,Dresses,215,74.99,South
+2023-06-18,Denim Shorts,Denim,280,49.99,West
+2023-06-22,Sports Bra,Activewear,355,39.99,West
+2023-06-25,Crop Top,Casual,380,29.99,West
+2023-07-01,Running Sneakers,Footwear,255,89.99,North
+2023-07-03,Denim Jacket,Outerwear,80,129.99,East
+2023-07-05,Yoga Pants,Activewear,410,59.99,West
+2023-07-08,Linen Shirt,Casual,270,44.99,South
+2023-07-10,Flip Flops,Footwear,340,24.99,South
+2023-07-12,Graphic Tee,Casual,460,24.99,West
+2023-07-15,Mini Dress,Dresses,300,69.99,South
+2023-07-18,Denim Shorts,Denim,295,49.99,West
+2023-07-22,Sports Bra,Activewear,375,39.99,West
+2023-07-25,Swimwear,Activewear,290,54.99,West
+2023-08-01,Running Sneakers,Footwear,270,89.99,North
+2023-08-03,Trench Coat,Outerwear,55,249.99,East
+2023-08-05,Yoga Pants,Activewear,390,59.99,West
+2023-08-08,Polo Shirt,Casual,235,39.99,North
+2023-08-10,Sneakers,Footwear,305,109.99,North
+2023-08-12,Graphic Tee,Casual,430,24.99,West
+2023-08-15,Wrap Dress,Dresses,260,79.99,South
+2023-08-18,Wide Leg Jeans,Denim,230,89.99,East
+2023-08-22,Sports Shorts,Activewear,310,34.99,West
+2023-08-25,Cargo Pants,Casual,200,54.99,North
+2023-09-01,Running Sneakers,Footwear,295,89.99,North
+2023-09-03,Bomber Jacket,Outerwear,115,149.99,East
+2023-09-05,Yoga Pants,Activewear,355,59.99,West
+2023-09-08,Knit Sweater,Knitwear,120,89.99,North
+2023-09-10,Ankle Boots,Footwear,160,159.99,South
+2023-09-12,Graphic Tee,Casual,395,24.99,West
+2023-09-15,Midi Dress,Dresses,195,89.99,South
+2023-09-18,Straight Jeans,Denim,265,74.99,East
+2023-09-22,Windbreaker,Outerwear,90,119.99,North
+2023-09-25,Hoodie,Knitwear,280,59.99,West
+2023-10-01,Running Sneakers,Footwear,320,89.99,North
+2023-10-03,Wool Coat,Outerwear,70,299.99,East
+2023-10-05,Yoga Pants,Activewear,320,59.99,West
+2023-10-08,Wool Sweater,Knitwear,175,79.99,North
+2023-10-10,Chelsea Boots,Footwear,185,189.99,South
+2023-10-12,Graphic Tee,Casual,355,24.99,West
+2023-10-15,Maxi Dress,Dresses,145,89.99,South
+2023-10-18,Slim Jeans,Denim,290,79.99,East
+2023-10-22,Puffer Vest,Outerwear,125,99.99,North
+2023-10-25,Hoodie,Knitwear,340,59.99,West
+2023-11-01,Running Sneakers,Footwear,340,89.99,North
+2023-11-03,Puffer Jacket,Outerwear,165,189.99,East
+2023-11-05,Yoga Pants,Activewear,290,59.99,West
+2023-11-08,Cashmere Sweater,Knitwear,85,149.99,North
+2023-11-10,Winter Boots,Footwear,140,219.99,North
+2023-11-12,Graphic Tee,Casual,310,24.99,West
+2023-11-15,Party Dress,Dresses,220,119.99,South
+2023-11-18,Wide Leg Jeans,Denim,255,89.99,East
+2023-11-22,Down Jacket,Outerwear,195,239.99,North
+2023-11-25,Hoodie,Knitwear,395,59.99,West
+2023-12-01,Running Sneakers,Footwear,355,89.99,North
+2023-12-03,Wool Coat,Outerwear,90,299.99,East
+2023-12-05,Yoga Pants,Activewear,265,59.99,West
+2023-12-08,Turtleneck Sweater,Knitwear,210,89.99,North
+2023-12-10,Winter Boots,Footwear,175,219.99,North
+2023-12-12,Graphic Tee,Casual,280,24.99,West
+2023-12-15,Velvet Dress,Dresses,265,139.99,South
+2023-12-18,Slim Jeans,Denim,240,79.99,East
+2023-12-22,Down Jacket,Outerwear,220,239.99,North
+2023-12-25,Hoodie,Knitwear,430,59.99,West
+2024-01-05,Running Sneakers,Footwear,370,94.99,North
+2024-01-08,Puffer Jacket,Outerwear,180,199.99,East
+2024-01-10,Yoga Pants,Activewear,310,62.99,West
+2024-01-12,Wool Sweater,Knitwear,195,84.99,North
+2024-01-15,Winter Boots,Footwear,155,229.99,North
+2024-01-18,Graphic Tee,Casual,300,26.99,West
+2024-01-20,Party Dress,Dresses,195,124.99,South
+2024-01-22,Wide Leg Jeans,Denim,310,94.99,East
+2024-01-25,Down Jacket,Outerwear,235,249.99,North
+2024-01-28,Hoodie,Knitwear,450,62.99,West
+2024-02-05,Running Sneakers,Footwear,395,94.99,North
+2024-02-08,Trench Coat,Outerwear,85,259.99,East
+2024-02-10,Yoga Pants,Activewear,360,62.99,West
+2024-02-12,Cashmere Sweater,Knitwear,70,159.99,North
+2024-02-15,Ankle Boots,Footwear,175,169.99,South
+2024-02-18,Graphic Tee,Casual,355,26.99,West
+2024-02-20,Wrap Dress,Dresses,230,84.99,South
+2024-02-22,Straight Jeans,Denim,285,79.99,East
+2024-02-25,Windbreaker,Outerwear,100,124.99,North
+2024-02-28,Hoodie,Knitwear,480,62.99,West
+2024-03-05,Running Sneakers,Footwear,420,94.99,North
+2024-03-08,Bomber Jacket,Outerwear,105,159.99,East
+2024-03-10,Yoga Pants,Activewear,405,62.99,West
+2024-03-12,Cotton Sweater,Knitwear,75,74.99,North
+2024-03-15,Sandals,Footwear,190,54.99,South
+2024-03-18,Graphic Tee,Casual,410,26.99,West
+2024-03-20,Sundress,Dresses,270,69.99,South
+2024-03-22,Wide Leg Jeans,Denim,340,94.99,East
+2024-03-25,Rain Jacket,Outerwear,65,104.99,North
+2024-03-28,Crop Top,Casual,340,32.99,West
