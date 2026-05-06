@@ -28,18 +28,20 @@ app.register_blueprint(analysis_bp)
 # Initialize DB at startup — runs under both gunicorn (Render) and python app.py
 init_db()
 
-# Serve frontend
+# Serve frontend — single-page app, all routing done by JS
 @app.route('/')
 def index():
     return send_from_directory(app.static_folder, 'index.html')
 
-@app.route('/dashboard')
-def dashboard_page():
-    return send_from_directory(app.static_folder, 'dashboard.html')
-
-@app.route('/upload')
-def upload_page():
-    return send_from_directory(app.static_folder, 'upload.html')
+# Catch-all: serve index.html for any unknown frontend path
+@app.route('/<path:path>')
+def catch_all(path):
+    # Try to serve the file if it exists (e.g., styles.css, script.js)
+    full = os.path.join(app.static_folder, path)
+    if os.path.isfile(full):
+        return send_from_directory(app.static_folder, path)
+    # Otherwise fall back to SPA
+    return send_from_directory(app.static_folder, 'index.html')
 
 @app.route('/health')
 def health():

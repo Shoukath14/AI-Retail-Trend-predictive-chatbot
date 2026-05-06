@@ -108,8 +108,18 @@ async function sendMessage() {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ message: text, session_id: currentSessionId })
     });
-    const data = await res.json();
 
+    // Handle non-JSON responses (e.g. HTML 500 error pages from server)
+    const contentType = res.headers.get('content-type') || '';
+    if (!contentType.includes('application/json')) {
+      typingEl.remove();
+      appendMessage('bot', `⚠️ Server error (HTTP ${res.status}). The backend returned an unexpected response. Please check Render logs.`);
+      isTyping = false;
+      setSendDisabled(false);
+      return;
+    }
+
+    const data = await res.json();
     typingEl.remove();
 
     if (data.error) {
@@ -121,7 +131,7 @@ async function sendMessage() {
     }
   } catch (err) {
     typingEl.remove();
-    appendMessage('bot', '⚠️ Could not connect to backend. Make sure the server is running on port 5000.');
+    appendMessage('bot', `⚠️ Could not reach the server. Error: ${err.message}`);
   }
 
   isTyping = false;
